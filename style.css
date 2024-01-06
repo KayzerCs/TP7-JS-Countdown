@@ -1,0 +1,34 @@
+body {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    text-align: center;
+}
+
+#countdownContainer {
+    position: relative;
+}
+
+#countdownDisplay {
+    font-size: 5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#countdownDisplay:hover {
+    transform: scale(1.1);
+}
+
+#hoverTextContainer {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#hoverText {
+    color: red;
+    display: none;
+}
+
+#countdownContainer:hover #hoverText {
+    display: block;
+}
