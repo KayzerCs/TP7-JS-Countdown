@@ -1,65 +1,71 @@
-const form = document.getElementById("form");
-const choice = document.getElementById("choice");
-const countdownDisplay = document.getElementById("countdownDisplay");
+// Exercice :
 
-let totalSeconds;
-let countdownInterval;
+// const form = document.getElementById("form");
+// const choice = document.getElementById("choice");
+// const countdownDisplay = document.getElementById("countdownDisplay");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const minutes = parseInt(choice.value, 10);
+// let totalSeconds;
+// let countdownInterval;
 
-  if (!isNaN(minutes) && minutes > 0) {
-    totalSeconds = minutes * 60;
-    startCountdown();
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   const minutes = parseInt(choice.value, 10);
 
-    countdownInterval = setInterval(updateCountdown, 1000);
+//   if (!isNaN(minutes) && minutes > 0) {
+//     totalSeconds = minutes * 60;
+//     startCountdown();
 
-    countdownDisplay.addEventListener("click", stopCountdown);
-  }
-});
+//     countdownInterval = setInterval(updateCountdown, 1000);
 
-function startCountdown() {
-  updateCountdown();
-}
+//     countdownDisplay.addEventListener("click", stopCountdown);
+//   }
+// });
 
-function updateCountdown() {
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
+// function startCountdown() {
+//   updateCountdown();
+// }
 
-  let displayText = "";
+// function updateCountdown() {
+//   const hours = Math.floor(totalSeconds / 3600);
+//   const minutes = Math.floor((totalSeconds % 3600) / 60);
+//   const seconds = totalSeconds % 60;
 
-  if (hours > 0) {
-    displayText += `${hours} heure${hours !== 1 ? "s" : ""} `;
-  }
+//   let displayText = "";
 
-  if (minutes > 0 || hours > 0) {
-    displayText += `${minutes} minute${minutes !== 1 ? "s" : ""} `;
-  }
+//   if (hours > 0) {
+//     displayText += `${hours} heure${hours !== 1 ? "s" : ""} `;
+//   }
 
-  displayText += `${seconds} seconde${seconds !== 1 ? "s" : ""}`;
+//   if (minutes > 0 || hours > 0) {
+//     displayText += `${minutes} minute${minutes !== 1 ? "s" : ""} `;
+//   }
 
-  countdownDisplay.innerHTML = `${displayText}`;
-  totalSeconds--;
+//   displayText += `${seconds} seconde${seconds !== 1 ? "s" : ""}`;
 
-  if (totalSeconds < 0) {
-    clearInterval(countdownInterval);
-    const message =
-      totalSeconds === 0
-        ? "Le compte à rebours est terminé!"
-        : "Le compte à rebours a été arrêté.";
-    countdownDisplay.innerHTML = message;
-    setTimeout(() => {
-      countdownDisplay.innerHTML = "";
-    }, 2000);
-  }
-}
+//   countdownDisplay.innerHTML = `${displayText}`;
+//   totalSeconds--;
 
-function stopCountdown() {
-  clearInterval(countdownInterval);
-  countdownDisplay.innerHTML = "Le compte à rebours a été arrêté.";
-  setTimeout(() => {
-    countdownDisplay.innerHTML = "";
-  }, 2000);
-}
+//   if (totalSeconds < 0) {
+//     clearInterval(countdownInterval);
+//     const message =
+//       totalSeconds === 0
+//         ? "Le compte à rebours est terminé!"
+//         : "Le compte à rebours a été arrêté.";
+//     countdownDisplay.innerHTML = message;
+//     setTimeout(() => {
+//       countdownDisplay.innerHTML = "";
+//     }, 2000);
+//   }
+// }
+
+// function stopCountdown() {
+//   clearInterval(countdownInterval);
+//   countdownDisplay.innerHTML = "Le compte à rebours a été arrêté.";
+//   setTimeout(() => {
+//     countdownDisplay.innerHTML = "";
+//   }, 2000);
+// }
+
+// ***************************************************************************************************************************
+
+// Correction : 
